@@ -1,0 +1,26 @@
+{
+  "name": "schematics-ng-material-crud",
+  "version": "0.1.0",
+  "description": "A schematics to create management CRUD operations of new entities",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "npm run build && jasmine **/*_spec.js"
+  },
+  "keywords": [
+    "schematics",
+	"angular",
+	"angular material",
+	"CRUD"
+  ],
+  "author": "Jose Luis Monteagudo",
+  "license": "MIT",
+  "schematics": "./src/collection.json",
+  "dependencies": {
+    "@angular-devkit/core": "^0.4.7",
+    "@angular-devkit/schematics": "^0.4.7",
+    "@types/jasmine": "^2.6.0",
+    "@types/node": "^8.0.31",
+    "jasmine": "^2.8.0",
+    "typescript": "^2.5.2"
+  }
+}

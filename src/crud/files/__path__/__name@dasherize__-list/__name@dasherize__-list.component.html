@@ -1,0 +1,62 @@
+<h2>
+    <%=classify(name)%> List
+</h2>
+
+<div class="<%= dasherize(name) %>-container mat-elevation-z8">
+
+    <div class="loading-container" *ngIf="dataSource.loading$ | async">
+        <mat-spinner [strokeWidth]="5"></mat-spinner>
+    </div>
+
+    <mat-form-field class="search-box">
+        <mat-placeholder>
+            <mat-icon>search</mat-icon>
+            <span>Search <%=classify(name)%></span>
+        </mat-placeholder>
+        <input matInput #search>
+    </mat-form-field>
+
+    <mat-table [dataSource]="dataSource" matSort>
+
+        <ng-container matColumnDef="name">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>Name</mat-header-cell>
+            <mat-cell *matCellDef="let <%= camelize(name) %>">{{
+                <%= camelize(name) %>.name}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="description">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>Description</mat-header-cell>
+            <mat-cell *matCellDef="let <%= camelize(name) %>">{{
+                <%= camelize(name) %>.description}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="actions">
+            <mat-header-cell *matHeaderCellDef>Actions</mat-header-cell>
+            <mat-cell *matCellDef="let <%= camelize(name) %>">
+
+                <button mat-icon-button [routerLink]="['../', <%= camelize(name) %>.id]">
+                    <mat-icon>remove_red_eye</mat-icon>
+                </button>
+
+                <button mat-icon-button [routerLink]="['../edit', <%= camelize(name) %>.id]">
+                    <mat-icon>mode_edit</mat-icon>
+                </button>
+
+                <button mat-icon-button class="delete" (click)="confirmDeletion(<%= camelize(name) %>)">
+                    <mat-icon>delete</mat-icon>
+                </button>
+
+            </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="<%= camelize(name) %>Columns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: <%= camelize(name) %>Columns;"></mat-row>
+    </mat-table>
+
+    <mat-paginator [length]="dataSource.count$ | async" [pageSize]="DEFAULT_PAGE_SIZE" [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+
+</div>
+
+<div class="actions">
+    <button mat-raised-button color="accent" routerLink="new"><mat-icon>add</mat-icon> New <%= classify(name) %></button>
+</div>

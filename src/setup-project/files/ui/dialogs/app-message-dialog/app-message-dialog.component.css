@@ -1,0 +1,33 @@
+.message-container {
+    text-align: center;
+}
+
+mat-icon {
+    font-size: 5em;
+    width: 100%;
+}
+
+.success {
+    color: #a5dc86;
+}
+
+.error {
+    color: #f27474;
+}
+
+.warning {
+    color: #f1c27b;
+}
+
+.mat-dialog-title {
+    margin: 20px 10px;
+    font-size: 1.7em;
+}
+
+.mat-dialog-content {
+    margin: 20px 10px;
+}
+
+.mat-dialog-actions {
+    justify-content: center;
+}

@@ -1,0 +1,27 @@
+<div class="admin-container" [class.admin-is-mobile]="mobileQuery.matches">
+    <mat-toolbar color="primary" class="admin-toolbar mat-elevation-z5">
+        <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
+        <h1 class="admin-app-name">CRUD Sample</h1>
+    </mat-toolbar>
+
+    <mat-sidenav-container class="admin-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+        <mat-sidenav #snav [opened]="!mobileQuery.matches" [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches" fixedTopGap="56" [class.mat-elevation-z5]="!mobileQuery.matches">
+            <mat-nav-list>
+                <a mat-list-item routerLink="dashboard" routerLinkActive="active-link">
+                    <mat-icon mat-list-icon>multiline_chart</mat-icon>
+                    Dashboard
+                </a>
+                <a mat-list-item routerLink="other-entity" routerLinkActive="active-link">
+                    <mat-icon mat-list-icon>apps</mat-icon>
+                    Other Entity
+                </a>
+            </mat-nav-list>
+        </mat-sidenav>
+
+        <mat-sidenav-content>
+            <div class="content">
+                <router-outlet></router-outlet>
+            </div>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+</div>

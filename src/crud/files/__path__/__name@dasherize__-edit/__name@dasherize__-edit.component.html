@@ -1,0 +1,4 @@
+<h2>Edit
+    <%= classify(name) %>
+</h2>
+<app-<%=dasherize(name) %>-form [<%= camelize(name)%>]="<%=camelize(name)%>" (submit)="onSubmit($event)" (cancel)="onCancel()"></app-<%=dasherize(name) %>-form>

@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "id": "SetupProjectSchema",
+  "title": "Setup Project for Angular Material CRUD",
+  "type": "object",
+  "properties": {
+    "path": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "path"
+  ]
+}

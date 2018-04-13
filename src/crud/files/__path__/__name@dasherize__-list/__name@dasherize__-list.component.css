@@ -1,0 +1,39 @@
+.<%=dasherize(name) %>-container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    min-width: 400px;
+}
+
+.loading-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 56px;
+    right: 0;
+    background: rgba(250, 250, 250, 0.7);
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-box {
+    margin-left: 30px;
+    margin-top: 10px;
+    width: 50%;
+    opacity: 0.5;
+}
+
+.mat-column-actions {
+    color: rgba(0, 0, 0, 0.4);
+    min-width: 130px;
+}
+
+.mat-column-actions button:hover {
+    color: #3f51b5;
+}
+
+.mat-column-actions .delete:hover {
+    color: red!important;
+}

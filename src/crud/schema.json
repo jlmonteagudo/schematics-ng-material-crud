@@ -1,0 +1,20 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "id": "CRUDSchema",
+  "title": "New CRUD module",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "path": {
+      "type": "string"
+    },
+    "endpoint": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "name", "path", "endpoint"
+  ]
+}
